@@ -15,5 +15,4 @@
 		>Learn more</a
 	>
 </nav>
-
 <slot />

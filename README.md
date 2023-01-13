@@ -1,43 +1,46 @@
 # Todo App
 A todo app built with SvelteKit, TailwindCSS, TypeScript and Firebase.
 
----
 
-# create-svelte
+## Getting Started
+1. Clone the repo
+2. Install dependencies
+    ```bash
+    npm install
+    ```
+3. Create a Firebase project
+4. Create a Firebase web app
+5. Setup Firebase within your project and create `.env` file in the root of the project
+6. Add the Firebase web app config to the `.env` file. See `env.example` file for reference.
+7. Run the app 
+    ```bash
+    npm run dev
+    ```
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Features
+- [x] Create a todo
+- [x] Delete a todo
+- [x] Mark a todo as completed
+- [x] View all todos
 
-## Creating a project
+### Upcoming Features
+- [x] Filter todos by completed status
+- [x] Filter todos by search term
+- [x] Persist todos in Firebase
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Read more
+- [SvelteKit](https://kit.svelte.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/)
 
-## Developing
+### License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### Find me on the web
+- [Twitter](https://twitter.com/RobertKibetK)
+- [LinkedIn](https://www.linkedin.com/in/robert-kiprono-a09889a4/)
+- [GitHub](https://github.com/robertkibet)
+- [Portfolio](https://kibet.me/)
