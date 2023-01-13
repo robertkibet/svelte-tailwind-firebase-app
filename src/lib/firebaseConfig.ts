@@ -1,21 +1,10 @@
-import {
-	PUBLIC_API_KEY,
-	PUBLIC_AUTH_DOMAIN,
-	PUBLIC_DATABASE_URL,
-	PUBLIC_PROJECT_ID,
-	PUBLIC_STORAGE_BUCKET,
-	PUBLIC_MESSAGING_SENDER_ID,
-	PUBLIC_APP_ID,
-	PUBLIC_MEASUREMENT_ID
-} from '$env/static/public';
-
 export const firebaseConfig = {
-	apiKey: PUBLIC_API_KEY,
-	authDomain: PUBLIC_AUTH_DOMAIN,
-	databaseURL: PUBLIC_DATABASE_URL,
-	projectId: PUBLIC_PROJECT_ID,
-	storageBucket: PUBLIC_STORAGE_BUCKET,
-	messagingSenderId: PUBLIC_MESSAGING_SENDER_ID,
-	appId: PUBLIC_APP_ID,
-	measurementId: PUBLIC_MEASUREMENT_ID
+	apiKey: 'AIzaSyDn-zMPLpGyP8ytARljyD7YL4RxFSAmvvo',
+	authDomain: 'sensen-ventures.firebaseapp.com',
+	databaseURL: 'https://sensen-ventures-default-rtdb.europe-west1.firebasedatabase.app',
+	projectId: 'sensen-ventures',
+	storageBucket: 'sensen-ventures.appspot.com',
+	messagingSenderId: '958043098825',
+	appId: '1:958043098825:web:1756ac09d1615aa89e8718',
+	measurementId: 'G-PS16F67BXK'
 };

@@ -1,83 +1,87 @@
 import { expect, test } from '@playwright/test';
 
+test.beforeEach(async ({ page }) => {
+	await page.goto('http://localhost:4173');
+	await page.waitForLoadState('domcontentloaded');
 
-test('Loads playwright page', async ({ page }) => {
-// navigate to playwright page
-await page.goto('/');
-
-expect(await page.title()).toContain('Svelte Todo App');
+	// page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
 });
 
+test('Page loads title', async ({ page }) => {
+	await page.goto('/');
 
-// test('Should have nav with 2 links', async ({ page }) => {
-// 	await page.goto('/');
-// 	const nav = page.locator('nav');
+	expect(await page.title()).toContain('Svelte Todo App');
+});
 
-// 	expect(await nav.isVisible()).toBe(true);
+test('Should have nav with 2 links', async ({ page }) => {
+	await page.goto('/');
+	const nav = page.locator('nav');
 
-// 	const navLinks = nav.locator('a');
+	expect(await nav.isVisible()).toBe(true);
 
-// 	expect(await navLinks.count()).toBe(2);
-// });
+	const navLinks = nav.locator('a');
 
-// test('Nav should have index page and about page links', async ({ page }) => {
-// 	await page.goto('/');
-// 	const nav = page.locator('nav');
+	expect(await navLinks.count()).toBe(2);
+});
 
-// 	const navLinks = nav.locator('a');
-// 	const homePage = await navLinks.nth(0).getAttribute('href');
-// 	const aboutPage = await navLinks.nth(1).getAttribute('href');
+test('Nav should have index page and about page links', async ({ page }) => {
+	await page.goto('/');
+	const nav = page.locator('nav');
 
-// 	expect(homePage).toBe('/');
-// 	expect(aboutPage).toBe('/about');
-// });
+	const navLinks = nav.locator('a');
+	const homePage = await navLinks.nth(0).getAttribute('href');
+	const aboutPage = await navLinks.nth(1).getAttribute('href');
 
-// test('Homepage should have input field with add todo button', async ({ page }) => {
-// 	await page.goto('/');
+	expect(homePage).toBe('/');
+	expect(aboutPage).toBe('/about');
+});
 
-// 	await page.waitForTimeout(1000);
+test('Homepage should have input field with add todo button', async ({ page }) => {
+	await page.goto('/');
 
-// 	const input = await page.locator('[data-todos="todo-input"]');
-// 	const button = await page.locator('[data-todos="add-todo"]');
+	await page.waitForTimeout(1000);
 
-// 	await page.waitForTimeout(1000);
+	const input = await page.locator('[data-todos="todo-input"]');
+	const button = await page.locator('[data-todos="add-todo"]');
 
-// 	expect(await input.isVisible()).toBe(true);
-// 	expect(await button.isVisible()).toBe(true);
+	await page.waitForTimeout(1000);
 
-// 	const inputType = await input.getAttribute('type');
-// 	expect(inputType).toBe('text');
+	expect(await input.isVisible()).toBe(true);
+	expect(await button.isVisible()).toBe(true);
 
-// 	const buttonText = await button.innerText();
-// 	expect(buttonText.toLowerCase().trim()).toBe('add todo'.trim());
-// });
+	const inputType = await input.getAttribute('type');
+	expect(inputType).toBe('text');
 
-// test('Should add todo to list', async ({ page }) => {
-// 	await page.goto('/');
+	const buttonText = await button.innerText();
+	expect(buttonText.toLowerCase().trim()).toBe('add todo'.trim());
+});
 
-// 	await page.waitForTimeout(1000);
+test('Should add todo to list', async ({ page }) => {
+	await page.goto('/');
 
-// 	const input = await page.locator('[data-todos="todo-input"]');
-// 	const button = await page.locator('[data-todos="add-todo"]');
+	await page.waitForTimeout(1000);
 
-// 	await page.waitForTimeout(1000);
+	const input = await page.locator('[data-todos="todo-input"]');
+	const button = await page.locator('[data-todos="add-todo"]');
 
-// 	const todoList = page.locator('[data-todos="todos"]');
-// 	const todoItems = await todoList.locator('[data-todos="todo-item"]');
+	await page.waitForTimeout(1000);
 
-// 	const todoListLength = await todoItems.count();
+	const todoList = page.locator('[data-todos="todos"]');
+	const todoItems = await todoList.locator('[data-todos="todo-item"]');
 
-// 	const randomId = await page.evaluate(() => crypto.randomUUID());
+	const todoListLength = await todoItems.count();
 
-// 	await input.fill(`Test ${randomId}`);
-// 	await button.click();
+	const randomId = await page.evaluate(() => crypto.randomUUID());
 
-// 	await page.waitForTimeout(1000);
+	await input.fill(`Test ${randomId}`);
+	await button.click();
 
-// 	const todoItemsUpdated = await todoList.locator('[data-todos="todo-item"]');
-// 	const todoListLengthUpdated = await todoItemsUpdated.count();
+	await page.waitForTimeout(1000);
 
-// 	expect(todoListLength).toBeGreaterThan(0);
+	const todoItemsUpdated = await todoList.locator('[data-todos="todo-item"]');
+	const todoListLengthUpdated = await todoItemsUpdated.count();
 
-// 	expect(todoListLengthUpdated).toBeGreaterThan(todoListLength);
-// });
+	expect(todoListLength).toBeGreaterThan(0);
+
+	expect(todoListLengthUpdated).toBeGreaterThan(todoListLength);
+});
