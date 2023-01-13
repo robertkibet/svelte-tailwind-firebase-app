@@ -1,3 +1,5 @@
+console.log('ENVIRONMENT:::::: ', process.env.NODE_ENV);
+
 import {
 	PUBLIC_API_KEY,
 	PUBLIC_AUTH_DOMAIN,

@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 	await page.waitForLoadState('domcontentloaded');
 
 	page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
-	console.log('ENVIRONMENT:::::: ', process.env);
+	console.log('ENVIRONMENT:::::: ', process.env.NODE_ENV);
 });
 
 test('Page loads title', async ({ page }) => {
