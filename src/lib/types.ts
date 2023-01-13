@@ -1,5 +1,5 @@
 interface Todo {
-	id: number;
+	id: string;
 	task: string;
 	isComplete: boolean;
 	createdAt: Date;
