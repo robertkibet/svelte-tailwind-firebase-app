@@ -4,7 +4,8 @@ test.beforeEach(async ({ page }) => {
 	await page.goto('http://localhost:4173');
 	await page.waitForLoadState('domcontentloaded');
 
-	// page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
+	page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
+	console.log('ENVIRONMENT:::::: ', process.env);
 });
 
 test('Page loads title', async ({ page }) => {
