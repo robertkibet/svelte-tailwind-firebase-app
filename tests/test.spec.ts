@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-	await page.goto('http://localhost:3000');
+	await page.goto('http://localhost:4173');
 	await page.waitForLoadState('domcontentloaded');
 
-	page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
+	// page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
 });
 
 test('Page loads title', async ({ page }) => {
