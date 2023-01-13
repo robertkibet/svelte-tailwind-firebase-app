@@ -13,8 +13,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '16.x'
-    - name: Print name
-      run: echo "My API_KEY is ${{secrets.API_KEY}}"
     - name: Install dependencies
       run: npm install
     - name: Install Playwright Browsers
