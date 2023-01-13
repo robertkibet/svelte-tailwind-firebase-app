@@ -111,6 +111,7 @@
 		<div class="max-w-7xl w-full bg-white shadow-md rounded-md px-4 py-2.5 pb-10 min-h-[300px]">
 			<div class="flex flex-row justify-between items-center gap-2">
 				<input
+					data-todos="todo-input"
 					type="text"
 					placeholder="Add a task"
 					bind:value={task}
@@ -133,6 +134,7 @@
         "
 				/>
 				<button
+					data-todos="add-todo"
 					on:click={addTodo}
 					class="inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs min-w-fit leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out"
 					>Add Todo</button
@@ -147,7 +149,7 @@
 						/>
 					</div>
 				{:else if todos.length > 0}
-					<div class="flex flex-col gap-2">
+					<div class="flex flex-col gap-2" data-todos="todos">
 						<!-- loop through todos -->
 						<h5 class="text-center font-bold text-lg pt-2 pb-2">Tasks</h5>
 
@@ -155,8 +157,9 @@
 							<div
 								class="flex flex-row justify-between border-b-orange-300 border-b-2 p-2 h-12 border-r-2 cursor-pointer hover:drop-shadow-lg hover:bg-gray-100
                         {todo.isComplete ? 'complete' : ''}"
+								data-todos="todo-item"
 							>
-								<span>{todo.task}</span>
+								<span data-todos="task">{todo.task}</span>
 								<span class="flex flex-row justify-between gap-4">
 									<!-- if iscompleted -->
 									{#if !todo.isComplete}
