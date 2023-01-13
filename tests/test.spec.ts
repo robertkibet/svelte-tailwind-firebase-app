@@ -7,7 +7,12 @@ test.beforeEach(async ({ page }) => {
 test('Loads playwright page', async ({ page }) => {
 	// navigate to playwright page
 	await page.goto('/');
+	test('Loads playwright page', async ({ page }) => {
+		// navigate to playwright page
+		await page.goto('/');
 
+		expect(await page.title()).toContain('Svelte Todo App');
+	});
 	expect(await page.title()).toContain('Svelte Todo App');
 });
 
