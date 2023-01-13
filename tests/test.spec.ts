@@ -1,15 +1,12 @@
 import { expect, test } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc');
+
+test('Loads playwright page', async ({ page }) => {
+// navigate to playwright page
+await page.goto('/');
+
+expect(await page.title()).toContain('Svelte Todo App');
 });
-
-  test('Loads playwright page', async ({ page }) => {
-    // navigate to playwright page
-	await page.goto('/');
-
-	expect(await page.title()).toContain('Svelte Todo App');
-  });
 
 
 // test('Should have nav with 2 links', async ({ page }) => {
