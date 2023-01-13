@@ -22,11 +22,11 @@ A todo app built with SvelteKit, TailwindCSS, TypeScript and Firebase.
 - [x] Delete a todo
 - [x] Mark a todo as completed
 - [x] View all todos
+- [x] Persist todos in Firebase
 
 ### Upcoming Features
 - [x] Filter todos by completed status
 - [x] Filter todos by search term
-- [x] Persist todos in Firebase
 
 
 
