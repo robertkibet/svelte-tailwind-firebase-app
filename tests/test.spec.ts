@@ -1,13 +1,11 @@
 import { expect, test } from '@playwright/test';
 
-
 test('Loads playwright page', async ({ page }) => {
-// navigate to playwright page
-await page.goto('/');
+	// navigate to playwright page
+	await page.goto('/');
 
-expect(await page.title()).toContain('Svelte Todo App');
+	expect(await page.title()).toContain('Svelte Todo App');
 });
-
 
 // test('Should have nav with 2 links', async ({ page }) => {
 // 	await page.goto('/');
